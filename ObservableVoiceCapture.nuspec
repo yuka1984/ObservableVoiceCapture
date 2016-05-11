@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+   <metadata minClientVersion="2.5">
+       <id>ObservableVoiceCapture</id>
+       <version>0.0.1</version>
+       <title>ObservableVoiceCapture</title>
+       <authors>Yuka Abuno</authors>
+       <owners>Yuka Abuno</owners>
+     <licenseUrl>https://github.com/yuka1984/NSpeex/blob/master/LICENSE.txt</licenseUrl>
+     <projectUrl>https://github.com/yuka1984/NSpeex</projectUrl>
+       <requireLicenseAcceptance>false</requireLicenseAcceptance>
+       <description>
+         Simple Voice Capture Library for Windows, Xamarin.Android and Xamarin.iOS
+       </description>
+     <releaseNotes>
+     </releaseNotes>
+     <tags>nAudio, xamarin, Voice, Sound</tags>
+     <dependencies>
+        <group>
+            <dependency id="ReactiveProperty" version="2.7.2" />
+        </group>        
+        <group targetFramework="net45">
+            <dependency id="NAudio" version="1.7.3" />
+        </group>
+    </dependencies>
+   </metadata>
+   <files>
+        
+        
+        <file src="src\Build\NET45\ObservableVoiceCapture.dll" target="lib\net45" />
+        <file src="src\Build\NET45\ObservableVoiceCapture.pdb" target="lib\net45" />
+        <file src="src\Build\NET45\ObservableVoiceCapture.Pcl.dll" target="lib\net45" />
+        <file src="src\Build\NET45\ObservableVoiceCapture.Pcl.pdb" target="lib\net45" /> 
+        
+        <file src="src\Build\Android\ObservableVoiceCapture.Droid.dll" target="lib\MonoAndroid10" />
+        <file src="src\Build\Android\ObservableVoiceCapture.Droid.pdb" target="lib\MonoAndroid10" />
+        <file src="src\Build\Android\ObservableVoiceCapture.Pcl.dll" target="lib\MonoAndroid10" />
+        <file src="src\Build\Android\ObservableVoiceCapture.Pcl.pdb" target="lib\MonoAndroid10" /> 
+        
+        <file src="src\Build\iOS\ObservableVoiceCapture.Touch.dll" target="lib\Xamarin.iOS10" />
+        <file src="src\Build\iOS\ObservableVoiceCapture.Touch.pdb" target="lib\Xamarin.iOS10" />
+        <file src="src\Build\iOS\ObservableVoiceCapture.Pcl.dll" target="lib\Xamarin.iOS10" />
+        <file src="src\Build\iOS\ObservableVoiceCapture.Pcl.pdb" target="lib\Xamarin.iOS10" /> 
+   </files>
+</package>
