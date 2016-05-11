@@ -6,8 +6,8 @@
        <title>ObservableVoiceCapture</title>
        <authors>Yuka Abuno</authors>
        <owners>Yuka Abuno</owners>
-     <licenseUrl>https://github.com/yuka1984/NSpeex/blob/master/LICENSE.txt</licenseUrl>
-     <projectUrl>https://github.com/yuka1984/NSpeex</projectUrl>
+     <licenseUrl>https://github.com/yuka1984/ObservableVoiceCapture/blob/master/LICENSE.txt</licenseUrl>
+     <projectUrl>https://github.com/yuka1984/ObservableVoiceCapture</projectUrl>
        <requireLicenseAcceptance>false</requireLicenseAcceptance>
        <description>
          Simple Voice Capture Library for Windows, Xamarin.Android and Xamarin.iOS
