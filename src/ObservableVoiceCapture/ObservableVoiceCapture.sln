@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservableVoiceCapture", "ObservableVoiceCapture\ObservableVoiceCapture.csproj", "{7E18A262-101C-4629-AB80-220C4086AB21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservableVoiceCapture.Pcl", "ObservableVoiceCapture.Pcl\ObservableVoiceCapture.Pcl.csproj", "{9907D02D-3A9E-49A4-B4A9-7E964A343966}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservableVoiceCapture.Droid", "ObservableVoiceCapture.Droid\ObservableVoiceCapture.Droid.csproj", "{3E5465E5-1950-4205-857A-11C67101C74B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservableVoiceCapture.Touch", "ObservableVoiceCapture.Touch\ObservableVoiceCapture.Touch.csproj", "{33A72FFF-82F0-4BD3-8D81-ED6C4C1EFA2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		AppStore|Any CPU = AppStore|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E18A262-101C-4629-AB80-220C4086AB21}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
+		{7E18A262-101C-4629-AB80-220C4086AB21}.AppStore|Any CPU.Build.0 = Release|Any CPU
+		{7E18A262-101C-4629-AB80-220C4086AB21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E18A262-101C-4629-AB80-220C4086AB21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E18A262-101C-4629-AB80-220C4086AB21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E18A262-101C-4629-AB80-220C4086AB21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9907D02D-3A9E-49A4-B4A9-7E964A343966}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
+		{9907D02D-3A9E-49A4-B4A9-7E964A343966}.AppStore|Any CPU.Build.0 = Release|Any CPU
+		{9907D02D-3A9E-49A4-B4A9-7E964A343966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9907D02D-3A9E-49A4-B4A9-7E964A343966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9907D02D-3A9E-49A4-B4A9-7E964A343966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9907D02D-3A9E-49A4-B4A9-7E964A343966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E5465E5-1950-4205-857A-11C67101C74B}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
+		{3E5465E5-1950-4205-857A-11C67101C74B}.AppStore|Any CPU.Build.0 = Release|Any CPU
+		{3E5465E5-1950-4205-857A-11C67101C74B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E5465E5-1950-4205-857A-11C67101C74B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E5465E5-1950-4205-857A-11C67101C74B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E5465E5-1950-4205-857A-11C67101C74B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33A72FFF-82F0-4BD3-8D81-ED6C4C1EFA2A}.AppStore|Any CPU.ActiveCfg = AppStore|Any CPU
+		{33A72FFF-82F0-4BD3-8D81-ED6C4C1EFA2A}.AppStore|Any CPU.Build.0 = AppStore|Any CPU
+		{33A72FFF-82F0-4BD3-8D81-ED6C4C1EFA2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33A72FFF-82F0-4BD3-8D81-ED6C4C1EFA2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33A72FFF-82F0-4BD3-8D81-ED6C4C1EFA2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33A72FFF-82F0-4BD3-8D81-ED6C4C1EFA2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
