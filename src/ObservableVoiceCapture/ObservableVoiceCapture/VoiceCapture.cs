@@ -7,7 +7,7 @@ using Reactive.Bindings.Extensions;
 
 namespace ObservableVoiceCapture
 {
-    internal class VoiceCapture : IVoiceCapture, IDisposable
+    public class VoiceCapture : IVoiceCapture, IDisposable
     {
         private readonly Subject<byte[]> _avaibleSubject = new Subject<byte[]>();
         private readonly CompositeDisposable _compositeDisposable = new CompositeDisposable();

@@ -6,7 +6,7 @@ using AudioToolbox;
 
 namespace ObservableVoiceCapture
 {
-    internal class VoiceCapture : IVoiceCapture, IDisposable
+    public class VoiceCapture : IVoiceCapture, IDisposable
     {
         private readonly Subject<byte[]> _subject = new Subject<byte[]>();
         private readonly InputAudioQueue _audioQueue;

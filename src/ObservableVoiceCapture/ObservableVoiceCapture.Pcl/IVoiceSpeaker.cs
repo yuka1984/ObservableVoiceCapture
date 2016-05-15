@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ObservableVoiceCapture
 {
-    public interface IVoiceCapture : IObservable<byte[]>, IDisposable
+    public interface IVoiceSpeaker : IObserver<byte[]>, IDisposable
     {
         /// <summary>
         /// CaptureStart
