@@ -90,10 +90,6 @@
       <Project>{9907d02d-3a9e-49a4-b4a9-7e964a343966}</Project>
       <Name>ObservableVoiceCapture.Pcl</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ObservableVoiceCapture.Test\ObservableVoiceCapture.Test.csproj">
-      <Project>{067456c0-086c-46a8-b37f-1405717b7bfc}</Project>
-      <Name>ObservableVoiceCapture.Test</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
    <metadata minClientVersion="2.5">
        <id>ObservableVoiceCapture</id>
-       <version>0.0.1</version>
+       <version>0.0.2</version>
        <title>ObservableVoiceCapture</title>
        <authors>Yuka Abuno</authors>
        <owners>Yuka Abuno</owners>
@@ -10,9 +10,10 @@
      <projectUrl>https://github.com/yuka1984/ObservableVoiceCapture</projectUrl>
        <requireLicenseAcceptance>false</requireLicenseAcceptance>
        <description>
-         Simple Voice Capture Library for Windows, Xamarin.Android and Xamarin.iOS
+         Simple Voice Capture adn Speak Library for Windows, Xamarin.Android and Xamarin.iOS
        </description>
      <releaseNotes>
+        0.0.2 Add VoiceSpeaker Class
      </releaseNotes>
      <tags>nAudio, xamarin, Voice, Sound</tags>
      <dependencies>
