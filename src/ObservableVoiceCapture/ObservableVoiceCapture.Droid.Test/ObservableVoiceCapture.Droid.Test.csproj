@@ -65,11 +65,15 @@
     <Reference Include="Xamarin.Android.NUnitLite" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\ObservableVoiceCapture.Test\SpeakerTest.cs">
+      <Link>SpeakerTest.cs</Link>
+    </Compile>
+    <Compile Include="..\ObservableVoiceCapture.Test\VoiceCaptureTest.cs">
+      <Link>VoiceCaptureTest.cs</Link>
+    </Compile>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SpeakerTest.cs" />
-    <Compile Include="VoiceCaptureTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

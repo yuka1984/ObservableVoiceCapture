@@ -14,7 +14,13 @@ namespace ObservableVoiceCapture
         private readonly BufferedWaveProvider _provider;
         private bool _isplay;
 
-        public VoiceSpeaker(int sampleSize, int bits = 16, int channels = 1)
+        public VoiceSpeaker(int sampleSize, Bits bits = Bits.Pcm16, Channel channels = Channel.Mono)
+            : this(sampleSize, (int) bits, (int) channels)
+        {
+            
+        }
+
+        private VoiceSpeaker(int sampleSize, int bits = 16, int channels = 1)
         {
             _provider = new BufferedWaveProvider(new WaveFormat(sampleSize, bits, channels));
             _player = new WaveOutEvent();
