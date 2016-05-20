@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
    <metadata minClientVersion="2.5">
        <id>ObservableVoiceCapture</id>
-       <version>0.0.2</version>
+       <version>0.0.3-beta1</version>
        <title>ObservableVoiceCapture</title>
        <authors>Yuka Abuno</authors>
        <owners>Yuka Abuno</owners>
@@ -14,19 +14,26 @@
        </description>
      <releaseNotes>
         0.0.2 Add VoiceSpeaker Class
+        0.0.3 Support Xamarin Forms
+            Add PCL FactoryClass
      </releaseNotes>
      <tags>nAudio, xamarin, Voice, Sound</tags>
      <dependencies>
-        <group>
+        <group targetFramework="MonoAndroid10">
+            <dependency id="ReactiveProperty" version="2.7.2" />
+        </group>       
+        <group targetFramework="Xamarin.iOS10">
             <dependency id="ReactiveProperty" version="2.7.2" />
         </group>        
         <group targetFramework="net45">
+            <dependency id="ReactiveProperty" version="2.7.2" />        
             <dependency id="NAudio" version="1.7.3" />
         </group>
     </dependencies>
    </metadata>
    <files>
-        
+        <file src="src\Build\Factory\ObservableVoiceCapture.Pcl.dll" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
+        <file src="src\Build\Factory\ObservabeVoiceCapture.Factory.dll" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />        
         
         <file src="src\Build\NET45\ObservableVoiceCapture.dll" target="lib\net45" />
         <file src="src\Build\NET45\ObservableVoiceCapture.pdb" target="lib\net45" />
