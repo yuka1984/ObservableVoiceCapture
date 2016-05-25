@@ -8,8 +8,8 @@
     <ProjectGuid>{B8317426-4D19-4A2E-80A8-155F0243899D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ObservabeVoiceCapture</RootNamespace>
-    <AssemblyName>ObservabeVoiceCapture.Factory</AssemblyName>
+    <RootNamespace>ObservableVoiceCapture</RootNamespace>
+    <AssemblyName>ObservableVoiceCapture</AssemblyName>
     <DefaultLanguage>ja-JP</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

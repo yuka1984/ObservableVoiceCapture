@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using AudioToolbox;
 #endif
 using NUnit.Framework;
+using ObservableVoiceCapture.Abstraction;
 
 namespace ObservableVoiceCapture.Test
 {

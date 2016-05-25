@@ -1,17 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ObservableVoiceCapture;
+using ObservableVoiceCapture.Abstraction;
 
 namespace ObservableVoiceCapture
 {
-    public class CaptureFactory
+    public static class CaptureFactory
     {
-        public static IVoiceCapture Create(int sampleSize, int buffermilliseconds)
+        public static IVoiceCapture Get(int sampleSize, int buffermilliseconds)
+        {
+            var lazy = new Lazy<IVoiceCapture>(()=> Create(sampleSize, buffermilliseconds));
+            if (lazy.Value == null)
+            {
+                throw new NotImplementedException();
+            }
+            return lazy.Value;
+        }        
+
+        private static IVoiceCapture Create(int sampleSize, int buffermilliseconds)
         {
 #if PORTABLE
-            throw new NotImplementedException();
+            return null;
 #else
             return new VoiceCapture(sampleSize, buffermilliseconds);
 #endif

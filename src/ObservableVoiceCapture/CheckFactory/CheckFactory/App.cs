@@ -11,6 +11,7 @@ namespace CheckFactory
     {
         public App()
         {
+            var recorder = ObservableVoiceCapture.CaptureFactory.Get(8000, 250);
             // The root page of your application
             MainPage = new ContentPage
             {

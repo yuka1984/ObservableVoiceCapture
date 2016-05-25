@@ -4,6 +4,7 @@ using System.Threading;
 using Android;
 using Android.App;
 using Android.Media;
+using ObservableVoiceCapture.Abstraction;
 
 [assembly: UsesPermission(Manifest.Permission.RecordAudio)]
 namespace ObservableVoiceCapture

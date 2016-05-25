@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NAudio.Wave;
 using ObservableVoiceCapture;
+using ObservableVoiceCapture.Abstraction;
 
 namespace ObservableVoiceCapture
 {

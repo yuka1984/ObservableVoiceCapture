@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>ObservableVoiceCapture</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>ObservableVoiceCapture.Touch</AssemblyName>
+    <AssemblyName>ObservableVoiceCapture</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

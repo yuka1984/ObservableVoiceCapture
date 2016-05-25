@@ -8,7 +8,7 @@
     <ProjectGuid>{9907D02D-3A9E-49A4-B4A9-7E964A343966}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ObservableVoiceCapture</RootNamespace>
+    <RootNamespace>ObservableVoiceCapture.Abstraction</RootNamespace>
     <AssemblyName>ObservableVoiceCapture.Pcl</AssemblyName>
     <DefaultLanguage>ja-JP</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
