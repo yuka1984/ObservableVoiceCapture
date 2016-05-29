@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:views="clr-namespace:VoiceRecorder.Views;assembly=VoiceRecorder"
+             mvvm:ViewModelLocator.AutowireViewModel="True"
+             x:Class="VoiceRecorder.Views.ListPage" Title="List">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="New" Command="{Binding AddCommand}" />
+  </ContentPage.ToolbarItems>
+  <views:NoSelectListView Command="{Binding SelectCommand}" ItemsSource="{Binding List}" IsPullToRefreshEnabled="True" RefreshCommand="{Binding LoadListCommand}" IsRefreshing="{Binding Busy.IsBusy}">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <TextCell Text="{Binding FileName}" Detail="{Binding Detail}" TextColor="Black" DetailColor="Gray">
+          <TextCell.ContextActions>
+            <MenuItem Text="Delete" IsDestructive="True" Command="{Binding DeleteCommand}" CommandParameter="{Binding FileName}" />
+          </TextCell.ContextActions>
+        </TextCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </views:NoSelectListView>
+</ContentPage>

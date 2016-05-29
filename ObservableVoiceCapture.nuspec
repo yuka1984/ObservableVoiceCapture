@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
    <metadata minClientVersion="2.5">
        <id>ObservableVoiceCapture</id>
-       <version>0.0.3-beta3</version>
+       <version>0.0.3</version>
        <title>ObservableVoiceCapture</title>
        <authors>Yuka Abuno</authors>
        <owners>Yuka Abuno</owners>
