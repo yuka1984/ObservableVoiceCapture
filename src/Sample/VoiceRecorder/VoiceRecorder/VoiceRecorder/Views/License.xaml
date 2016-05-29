@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VoiceRecorder.Views.License" Title="License">
+  <StackLayout>
+    <Label Text="FromsToolkit" FontSize="Large" />
+    <Label Text="https://github.com/jamesmontemagno/xamarin.forms-toolkit/blob/master/LICENSE.md" />
+    <Label Text="ReactiveProperty" FontSize="Large" />
+    <Label Text="https://github.com/runceel/ReactiveProperty/blob/master/LICENSE.txt" />
+    <Label Text="ObservableVoiceCapture " FontSize="Large" />
+    <Label Text="https://github.com/yuka1984/ObservableVoiceCapture/blob/master/LICENSE.txt" />
+  </StackLayout>
+</ContentPage>

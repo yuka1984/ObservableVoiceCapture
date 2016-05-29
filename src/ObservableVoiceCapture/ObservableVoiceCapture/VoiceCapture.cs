@@ -3,6 +3,7 @@ using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using NAudio.Wave;
+using ObservableVoiceCapture.Abstraction;
 using Reactive.Bindings.Extensions;
 
 namespace ObservableVoiceCapture

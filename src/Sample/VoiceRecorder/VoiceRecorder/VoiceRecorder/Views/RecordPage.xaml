@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             x:Class="VoiceRecorder.Views.RecordPage"
+             Title="Record"
+             BackgroundColor="White"
+             mvvm:ViewModelLocator.AutowireViewModel="True"
+             >
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Close" Command="{Binding CloseCommand}"></ToolbarItem>
+  </ContentPage.ToolbarItems>
+  <StackLayout>
+    <AbsoluteLayout HeightRequest="250" BackgroundColor="Black">      
+      <BoxView BackgroundColor="Gray" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"></BoxView>
+      <BoxView BackgroundColor="Green" IsVisible="{Binding IsRecording.Value}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"></BoxView>
+      <BoxView BackgroundColor="Red" IsVisible="{Binding IsCapturing.Value}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"></BoxView>
+      <BoxView BackgroundColor="Black" Opacity="0.5" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,1,1,0.3"></BoxView>
+      <Label Text="{Binding PositionTime.Value}" FontFamily="Arial" FontSize="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,1,1,0.3" ></Label>
+      <Label Text="{Binding StatusMessage.Value}" FontSize="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" AbsoluteLayout.LayoutFlags="All"  AbsoluteLayout.LayoutBounds="0,0.3,1,0.3"></Label>
+    </AbsoluteLayout>
+    <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="CenterAndExpand">
+      <Label Text="SilenceCut" VerticalTextAlignment="Center" />
+      <Switch  IsToggled="{Binding IsSilenceCut.Value, Mode=TwoWay}" />  
+    </StackLayout>
+    <AbsoluteLayout HeightRequest="250" BackgroundColor="Black">
+      <Button Text="Start" Margin="10" BackgroundColor="White" TextColor="Red" Command="{Binding StartCommand}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,0.5,0.7" />
+      <Button Text="Stop" Margin="10" BackgroundColor="White" TextColor="Blue" Command="{Binding StopCommand}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,0,0.5,0.7" />
+      <Button Text="Save" Margin="10" BackgroundColor="White" TextColor="Black" Command="{Binding SaveCommand}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,1 , 1,0.3"></Button>
+    </AbsoluteLayout>    
+  </StackLayout>
+</ContentPage>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reactive.Subjects;
 using System.Runtime.InteropServices;
 using AudioToolbox;
+using ObservableVoiceCapture.Abstraction;
 
 namespace ObservableVoiceCapture
 {

@@ -1,5 +1,6 @@
 using System;
 using Android.Media;
+using ObservableVoiceCapture.Abstraction;
 
 namespace ObservableVoiceCapture
 {

@@ -6,8 +6,12 @@ using System.Reactive.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+
+#if __IOS__
 using AudioToolbox;
+#endif
 using NUnit.Framework;
+using ObservableVoiceCapture.Abstraction;
 
 namespace ObservableVoiceCapture.Test
 {
@@ -20,10 +24,11 @@ namespace ObservableVoiceCapture.Test
         [SetUp]
         public void Setup()
         {
+#if __IOS__
             AudioSession.Initialize();
             AudioSession.SetActive(true);
             AudioSession.Category = AudioSessionCategory.PlayAndRecord;
-
+#endif
             _capture = new VoiceCapture(8000, 250);
             _speaker = new VoiceSpeaker(8000);
         }
@@ -32,7 +37,9 @@ namespace ObservableVoiceCapture.Test
         public void Tear()
         {
             _capture.Dispose();
+#if __IOS__
             AudioSession.SetActive(false);
+#endif
         }
 
         [Test]
