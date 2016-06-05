@@ -24,7 +24,13 @@ namespace VoiceRecorder.ViewModels
                     Text = "License",
                     Detail = "ライセンスを表示します",
                     Navigation = "License"
-                }
+                },
+                new MenuItem
+                {
+                    Text = "Test",
+                    Detail = "ライセンスを表示します",
+                    Navigation = "TestPage"
+                },
             };
             SelectedItem.Value = Items.First();
             SelectedItem.Where(x => x != null).Subscribe(x => { MessagingService.Current.SendMessage(x.Navigation); });

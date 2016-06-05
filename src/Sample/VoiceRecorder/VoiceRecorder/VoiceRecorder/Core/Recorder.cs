@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using BitConverterExtention;
 using ObservableVoiceCapture;
 using ObservableVoiceCapture.Abstraction;
@@ -19,6 +21,7 @@ namespace VoiceRecorder.Core
         private const string tempFileName = "tempsound";
         private readonly IVoiceCapture _capture;
         private readonly IFile _file;
+        private readonly object lockobj = new object();
 
         private bool _isrecording;
 
@@ -27,18 +30,22 @@ namespace VoiceRecorder.Core
         private bool _isstarted;
         private long _positiontime;
 
+        private readonly ISpeechToTextConverter _speechToTextConverter;
+
         private int _stopframecount;
         private Stream _tempStream;
 
         private long _totaltime;
-        private readonly object lockobj = new object();
 
-        public Recorder(IFile file)
+        public Recorder(IFile file, ISpeechToTextConverter speechToTextConverter)
         {
             _capture = CaptureFactory.Get(SampleSize, BufferTime);
+            _speechToTextConverter = speechToTextConverter;
+            RecognizedVoices = new ReadOnlyObservableCollection<string>(_recognizedvoices);
             var noiseCut = _capture
                 .Select(x =>
                 {
+                    var capcturing = IsCapturing;
                     for (var i = 0; i < x.Length; i += 2)
                     {
                         var test = BitConverter.ToInt16(x, i);
@@ -59,8 +66,23 @@ namespace VoiceRecorder.Core
                             StopFrameCount++;
                         }
                     }
+                    if (capcturing && !IsCapturing)
+                    {
+                        speechToTextConverter.OnNext(new StrecmPcm {IsStop = true});
+                    }
+
                     return x;
                 });
+            _speechToTextConverter.Subscribe(x =>
+            {
+                if (x.IsFainel)
+                {
+                    _recognizedvoices.Add(x.Text);
+                }
+                CurrentVoice = x.Text;
+            });
+
+
             noiseCut.Subscribe(x =>
             {
                 if (_tempStream != null && _tempStream.CanWrite)
@@ -68,6 +90,7 @@ namespace VoiceRecorder.Core
                     if (IsCapturing)
                     {
                         _tempStream.Write(x, 0, x.Length);
+                        speechToTextConverter.OnNext(new StrecmPcm { IsStop = false, PcmStream = x});
                         UpdateTime();
                     }
                 }
@@ -126,22 +149,26 @@ namespace VoiceRecorder.Core
             private set { SetProperty(ref _totaltime, value); }
         }
 
-        public void Start()
+        public void Dispose()
         {
-            lock (lockobj)
+            _capture.Dispose();
+            _tempStream?.Dispose();
+        }
+
+        public async Task Start()
+        {
+            if (IsRecording) return;
+            if (!IsStarted)
             {
-                if (IsRecording) return;
-                if (!IsStarted)
-                {
-                    _tempStream?.Dispose();
-                    _tempStream = _file.GetStream(tempFileName, StorageType.Local, FileMode.Create, FileAccess.ReadWrite,
-                        FileShare.ReadWrite);
-                }
-                _capture.Start();
-                IsRecording = true;
-                IsStarted = true;
-                StopFrameCount = int.MaxValue;
+                _tempStream?.Dispose();
+                _tempStream = _file.GetStream(tempFileName, StorageType.Local, FileMode.Create, FileAccess.ReadWrite,
+                    FileShare.ReadWrite);
             }
+            await _speechToTextConverter.Start("*", "*");
+            _capture.Start();
+            IsRecording = true;
+            IsStarted = true;
+            StopFrameCount = int.MaxValue;
         }
 
         public void Stop()
@@ -178,6 +205,17 @@ namespace VoiceRecorder.Core
                 }
             }
         }
+
+        private string _currentvoice;
+        public string CurrentVoice
+        {
+            get { return _currentvoice; }
+            set { SetProperty(ref _currentvoice, value); }
+        }
+
+        private readonly ObservableCollection<string> _recognizedvoices = new ObservableCollection<string>();
+        public ReadOnlyObservableCollection<string> RecognizedVoices { get; private set; }
+
 
         private void UpdateTime()
         {
@@ -223,13 +261,6 @@ namespace VoiceRecorder.Core
             public ushort bit; // 量子化ビット数
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] public byte[] dataID; // "data"
             public uint dataSize; // 波形データのバイト数
-        }
-
-        public void Dispose()
-        {
-            _capture.Dispose();
-            _tempStream?.Dispose();
-
         }
     }
 }

@@ -24,6 +24,8 @@ namespace VoiceRecorder.Droid
             _backSubject = new Subject<Action>();
             var container = new UnityContainer();
             container.RegisterType(typeof(IFile), typeof(File), new ContainerControlledLifetimeManager());
+            container.RegisterType(typeof(ISpeechToTextConverter), typeof(SpeechToTextConverter),
+                new TransientLifetimeManager());
             LoadApplication(new App(container, _backSubject));
         }
 

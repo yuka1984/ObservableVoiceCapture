@@ -19,6 +19,7 @@
       <Label Text="{Binding PositionTime.Value}" FontFamily="Arial" FontSize="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,1,1,0.3" ></Label>
       <Label Text="{Binding StatusMessage.Value}" FontSize="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" AbsoluteLayout.LayoutFlags="All"  AbsoluteLayout.LayoutBounds="0,0.3,1,0.3"></Label>
     </AbsoluteLayout>
+    <Label Text="{Binding CurrentVoice.Value}" FontSize="12"></Label>
     <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="CenterAndExpand">
       <Label Text="SilenceCut" VerticalTextAlignment="Center" />
       <Switch  IsToggled="{Binding IsSilenceCut.Value, Mode=TwoWay}" />  

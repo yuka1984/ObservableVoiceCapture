@@ -28,6 +28,7 @@ namespace VoiceRecorder.ViewModels
             IsRecording = _recorder.ToReactivePropertyAsOneWaySync(x => x.IsRecording);
             IsCapturing = _recorder.ToReactivePropertyAsOneWaySync(x => x.IsCapturing);
             IsSilenceCut = _recorder.ToReactivePropertyAsSynchronized(x => x.IsSilenceCut);
+            CurrentVoice = _recorder.ToReactivePropertyAsOneWaySync(x => x.CurrentVoice);
 
             StatusMessage = IsStarted.CombineLatest(IsRecording, IsCapturing, (start, recording, capturing) =>
             {
@@ -44,7 +45,7 @@ namespace VoiceRecorder.ViewModels
             }).ToReadOnlyReactiveProperty();
 
             StartCommand = IsRecording.Inverse().ToReactiveCommand();
-            StartCommand.Subscribe(x => recorder.Start());
+            StartCommand.Subscribe(async x => await recorder.Start());
 
             StopCommand = IsRecording.ToReactiveCommand();
             StopCommand.Subscribe(x => recorder.Stop());
@@ -118,6 +119,8 @@ namespace VoiceRecorder.ViewModels
         public ReadOnlyReactiveProperty<bool> IsCapturing { get; }
         public ReactiveProperty<bool> IsSilenceCut { get; private set; }
         public ReadOnlyReactiveProperty<string> StatusMessage { get; private set; }
+
+        public ReadOnlyReactiveProperty<string> CurrentVoice { get; private set; }
 
         public ReactiveCommand StartCommand { get; }
         public ReactiveCommand StopCommand { get; }

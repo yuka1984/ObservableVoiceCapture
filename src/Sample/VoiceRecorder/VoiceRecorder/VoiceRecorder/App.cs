@@ -21,11 +21,27 @@ namespace VoiceRecorder
     {
         public const string ListPage = "ListPage";
         public const string License = "License";
+        public const string TestPage = "TestPage";
         public const string RecordPage = "RecordPage";
         public const string RecordPageClose = "RecordPageClose";
         public const string Question = "Question";
         public const string GoBack = "GoBack";
 
+    }
+
+    public class TestPage : ContentPage
+    {
+        protected override void OnAppearing()
+        {
+            System.Diagnostics.Debug.WriteLine("OnAppearing");
+            base.OnAppearing();
+        }
+
+        protected override void OnDisappearing()
+        {
+            System.Diagnostics.Debug.WriteLine("OnDisappearing");
+            base.OnDisappearing();
+        }
     }
 
     public class App : Application
@@ -59,6 +75,14 @@ namespace VoiceRecorder
                 {
                     _masterDetailPage.Detail = licencepage;
                     _masterDetailPage.IsPresented = false;
+                });
+            });
+            var testpage = new TestPage();
+            MessagingService.Current.Subscribe(MessageKey.TestPage, service =>
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    _masterDetailPage.Navigation.PushModalAsync(testpage) ;                   
                 });
             });
             MessagingService.Current.Subscribe(MessageKey.RecordPage, service =>
